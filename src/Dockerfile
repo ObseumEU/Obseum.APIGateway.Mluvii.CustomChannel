@@ -9,13 +9,14 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 COPY ["Obseum.Mluvii.CustomChannel/Obseum.Mluvii.CustomChannel.csproj", "Obseum.Mluvii.CustomChannel/"]
 COPY ["Obseum.Mluvii.CustomChannel.Tests/Obseum.Mluvii.CustomChannel.Tests.csproj", "Obseum.Mluvii.CustomChannel.Tests/"]
-RUN dotnet restore "./src/Obseum.Mluvii.CustomChannel/Obseum.Mluvii.CustomChannel.csproj"
+RUN dotnet restore "./Obseum.Mluvii.CustomChannel/Obseum.Mluvii.CustomChannel.csproj"
 COPY . .
 WORKDIR "/Obseum.Mluvii.CustomChannel"
 RUN dotnet build "./Obseum.Mluvii.CustomChannel.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS test 
-RUN dotnet test "Obseum.Mluvii.CustomChannel.Tests/Obseum.Mluvii.CustomChannel.Tests.csproj" --collect:"XPlat Code Coverage" --results-directory:"/app/coverage/";
+WORKDIR "/Obseum.Mluvii.CustomChannel.Tests"
+RUN dotnet test "./Obseum.Mluvii.CustomChannel.Tests.csproj" --collect:"XPlat Code Coverage" --results-directory:"/app/coverage/";
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
