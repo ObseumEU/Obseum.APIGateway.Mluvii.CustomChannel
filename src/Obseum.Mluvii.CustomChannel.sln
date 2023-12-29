@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34407.89
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Obseum.Mluvii.CustomChannel", "Obseum.Mluvii.CustomChannel\Obseum.Mluvii.CustomChannel.csproj", "{DE148B4E-87E5-49A5-89F2-AAC21D2384C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Obseum.Mluvii.CustomChannel", "Obseum.Mluvii.CustomChannel\Obseum.Mluvii.CustomChannel.csproj", "{DE148B4E-87E5-49A5-89F2-AAC21D2384C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Obseum.Mluvii.CustomChannel.Contract", "Obseum.Mluvii.CustomChannel.Contract\Obseum.Mluvii.CustomChannel.Contract.csproj", "{FC9B6B57-18F4-4389-832C-22B36A41058A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Obseum.Mluvii.CustomChannel.Contract", "Obseum.Mluvii.CustomChannel.Contract\Obseum.Mluvii.CustomChannel.Contract.csproj", "{FC9B6B57-18F4-4389-832C-22B36A41058A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Obseum.Mluvii.CustomChannel.Tests", "Obseum.Mluvii.CustomChannel\Obseum.Mluvii.CustomChannel.Tests\Obseum.Mluvii.CustomChannel.Tests.csproj", "{2C155BF8-286C-46B9-AAEC-507B5AD0817F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Obseum.Mluvii.CustomChannel.Tests", "Obseum.Mluvii.CustomChannel.Tests\Obseum.Mluvii.CustomChannel.Tests.csproj", "{694188E7-FC18-4143-BC5C-D96380AF1FB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{FC9B6B57-18F4-4389-832C-22B36A41058A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC9B6B57-18F4-4389-832C-22B36A41058A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC9B6B57-18F4-4389-832C-22B36A41058A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C155BF8-286C-46B9-AAEC-507B5AD0817F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C155BF8-286C-46B9-AAEC-507B5AD0817F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C155BF8-286C-46B9-AAEC-507B5AD0817F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C155BF8-286C-46B9-AAEC-507B5AD0817F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{694188E7-FC18-4143-BC5C-D96380AF1FB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{694188E7-FC18-4143-BC5C-D96380AF1FB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{694188E7-FC18-4143-BC5C-D96380AF1FB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{694188E7-FC18-4143-BC5C-D96380AF1FB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
