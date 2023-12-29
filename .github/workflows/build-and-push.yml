@@ -1,4 +1,4 @@
-name: ci
+name: build-and-push
 on:
   push:
     branches:
@@ -22,3 +22,22 @@ jobs:
       ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       DOCKER_USER: ${{ secrets.DOCKER_USER }}
       DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
+
+  extract-coverage:
+      runs-on: ubuntu-latest
+      needs: docker
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v4
+        - name: Login to Docker Hub
+          run: echo "${{ secrets.DOCKER_PASS }}" | docker login -u "${{ secrets.DOCKER_USER }}" --password-stdin
+        - name: Extract coverage reports
+          run: |
+            docker create --name temp-container mluvii/api-gateway-mluvii-webhook:latest
+            docker cp temp-container:/app/coverage/ coverage/
+            docker rm temp-container
+
+        - name: Upload coverage to Codecov
+          uses: codecov/codecov-action@v3
+          with:
+            directory: ./coverage/
