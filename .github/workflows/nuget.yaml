@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - 'APIGateway.MluviiCustomChannel.Contract/**'
+      - 'src/Obseum.Mluvii.CustomChannel.Contract/**'
 
 jobs:
   build-and-push:
@@ -17,23 +17,17 @@ jobs:
     - name: Set up .NET Core
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '7.0'
+        dotnet-version: '8.0'
 
     - name: Restore dependencies
-      run: dotnet restore APIGateway.MluviiCustomChannel.Contract/APIGateway.MluviiCustomChannel.Contracts.csproj
+      run: dotnet restore src/Obseum.Mluvii.CustomChannel.Contract/Obseum.Mluvii.CustomChannel.Contract.csproj
 
     - name: Build
-      run: dotnet build APIGateway.MluviiCustomChannel.Contracts/APIGateway.MluviiCustomChannel.Contracts.csproj --configuration Release --no-restore
+      run: dotnet build src/Obseum.Mluvii.CustomChannel.Contract/Obseum.Mluvii.CustomChannel.Contract.csproj --configuration Release --no-restore
 
     - name: Pack
-      run: dotnet pack APIGateway.MluviiCustomChannel.Contracts/APIGateway.MluviiCustomChannel.Contracts.csproj --no-build --configuration Release /p:PackageVersion=1.${{ github.run_number }} -o nupkg
-
-    # List files in the package directory
-    - name: List files in the nupkg directory
-      run: ls nupkg
+      run: dotnet pack src/Obseum.Mluvii.CustomChannel.Contract/Obseum.Mluvii.CustomChannel.Contract.csproj --no-build --configuration Release /p:PackageVersion=1.${{ github.run_number }} -o nupkg
 
     # Push NuGet Package
     - name: Push
-      run: Get-ChildItem nupkg -Filter *.nupkg | Foreach-Object { dotnet nuget push $_.FullName --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate }
-      env:
-        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+      run: Get-ChildItem nupkg -Filter *.nupkg | Foreach-Object { dotnet nuget push $_.FullName --source https://nuget.pkg.github.com/ObseumEU/index.json --api-key ${{ secrets.GITHUB_TOKEN  }} --skip-duplicate }
