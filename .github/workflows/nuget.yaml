@@ -17,16 +17,16 @@ jobs:
     - name: Set up .NET Core
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '7.0'
+        dotnet-version: '8.0'
 
     - name: Restore dependencies
-      run: dotnet restore Obseum.Mluvii.CustomChannel.Contract/Obseum.Mluvii.CustomChannel.Contract.csproj
+      run: dotnet restore src/Obseum.Mluvii.CustomChannel.Contract/Obseum.Mluvii.CustomChannel.Contract.csproj
 
     - name: Build
-      run: dotnet build Obseum.Mluvii.CustomChannel.Contract/Obseum.Mluvii.CustomChannel.Contract.csproj --configuration Release --no-restore
+      run: dotnet build src/Obseum.Mluvii.CustomChannel.Contract/Obseum.Mluvii.CustomChannel.Contract.csproj --configuration Release --no-restore
 
     - name: Pack
-      run: dotnet pack Obseum.Mluvii.CustomChannel.Contract/Obseum.Mluvii.CustomChannel.Contract.csproj --no-build --configuration Release /p:PackageVersion=1.${{ github.run_number }} -o nupkg
+      run: dotnet pack src/Obseum.Mluvii.CustomChannel.Contract/Obseum.Mluvii.CustomChannel.Contract.csproj --no-build --configuration Release /p:PackageVersion=1.${{ github.run_number }} -o nupkg
 
     # Push NuGet Package
     - name: Push
