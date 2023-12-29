@@ -1,4 +1,4 @@
-name: Build and Publish NuGet
+name: Contract Nuget
 
 on:
   push:
