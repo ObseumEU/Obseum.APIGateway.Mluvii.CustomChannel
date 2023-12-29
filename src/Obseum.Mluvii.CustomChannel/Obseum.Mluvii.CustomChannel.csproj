@@ -20,4 +20,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6-Preview.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Obseum.Mluvii.CustomChannel.Contract\Obseum.Mluvii.CustomChannel.Contract.csproj" />
+  </ItemGroup>
+
 </Project>

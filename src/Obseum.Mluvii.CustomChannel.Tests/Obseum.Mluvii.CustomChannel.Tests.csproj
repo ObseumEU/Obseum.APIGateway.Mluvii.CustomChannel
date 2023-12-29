@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Obseum.Mluvii.CustomChannel\Obseum.Mluvii.CustomChannel.csproj" />
+  </ItemGroup>
+
 </Project>
