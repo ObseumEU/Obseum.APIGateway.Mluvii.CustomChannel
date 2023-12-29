@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Obseum.Mluvii.CustomChannel.Tests\**" />
+    <Content Remove="Obseum.Mluvii.CustomChannel.Tests\**" />
+    <EmbeddedResource Remove="Obseum.Mluvii.CustomChannel.Tests\**" />
+    <None Remove="Obseum.Mluvii.CustomChannel.Tests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6-Preview.2" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,6 @@
+@Obseum.Mluvii.CustomChannel_HostAddress = http://localhost:32769
+
+GET {{Obseum.Mluvii.CustomChannel_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -16,8 +16,8 @@ jobs:
     uses: BooAIPublic/github-workflows/.github/workflows/build-and-push.yml@master
     with:
       image: "mluvii/api-gateway-mluvii-customchannel"
-      dockerfile: ./Dockerfile
-      context: .
+      dockerfile: ./src/Dockerfile
+      context: ./src/
     secrets:
       ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       DOCKER_USER: ${{ secrets.DOCKER_USER }}
